@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+		<title>Pedidos</title>
+		<link rel="stylesheet" href="style.css" />
+		<link rel="stylesheet" href="form.css" />
+	</head>
+	<body>
+		<header>
+			<div class="container-hero">
+				<div class="container hero">
+					<div class="customer-support">
+						<i class="fa-solid fa-headset"></i>
+						<div class="content-customer-support">
+							<span class="text">Soporte al cliente</span>
+							<span class="number">444-444-4444</span>
+						</div>
+					</div>
+
+					<div class="container-logo">
+						<i class="fa-solid fa-mug-hot"></i>
+						<h1 class="logo"><a href="maymay.png">MayMay Coffee</a></h1>
+					</div>
+
+					<div class="container-user">
+						<a href="iniciose.html"><i class="fa-solid fa-user"></i></a>
+						<a href="carr.html"><i class="fa-solid fa-basket-shopping"></i></a>
+						<div class="content-shopping-cart">
+							<span class="text">Carrito</span>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="container-navbar">
+				<nav class="navbar container">
+					<i class="fa-solid fa-bars"></i>
+					<ul class="menu">
+						<li><a href="index.html">Inicio</a></li>
+						<li><a href="info.html">Nosotros</a></li>
+						<li><a href="menu.html">Servicios</a></li>
+						<li><a href="ubi.html">Ubicación</a></li>
+						<li><a href="pedidos.html">Ordena aquí</a></li>
+					</ul>
+
+					<form class="search-form">
+						<input type="search" placeholder="Buscar..." />
+						<button class="btn-search">
+							<i class="fa-solid fa-magnifying-glass"></i>
+						</button>
+					</form>
+				</nav>
+			</div>
+		</header>
+
+		<main class="main-content">
+			<section class="container container-features">
+				<div class="card-feature">
+					<i class="fa-solid fa-plane-up"></i>
+					<div class="feature-content">
+						<span>Envío gratis</span>
+						<p>En pedido superior a $150</p>
+					</div>
+				</div>
+				<div class="card-feature">
+					<i class="fa-solid fa-wallet"></i>
+					<div class="feature-content">
+						<span>Promociones</span>
+						<p>Promociones nuevas cada semana</p>
+					</div>
+				</div>
+				<div class="card-feature">
+					<i class="fa-solid fa-headset"></i>
+					<div class="feature-content">
+						<span>Servicio al cliente 24/7</span>
+						<p>Llámenos al 444-444-4444</p>
+					</div>
+				</div>
+				<div class="card-feature">
+					<i class="fa-solid fa-store"></i>
+					<div class="feature-content">
+						<span>Conoce nuestros establecimientos</span>
+						<p>Ver ubicación</p>
+					</div>
+				</div>
+			</section>
+
+			<div class="container-pedido">
+				<center><h2>Pedido a Domicilio</h2></center>
+				<div class="form-container">
+					<form id="pedidoFormulario" action="procesar_pedido.php" method="post">
+						<div class="form-group">
+							<label for="nombre">Nombre:</label>
+							<input type="text" id="nombre" name="nombre" required>
+						</div>
+
+						<div class="form-group">
+							<label for="email">Email:</label>
+							<input type="email" id="email" name="email" required>
+						</div>
+
+						<div class="form-group">
+							<label for="telefono">Teléfono:</label>
+							<input type="text" id="telefono" name="telefono" required>
+						</div>
+
+						<div class="form-group">
+							<label for="direccion">Dirección de entrega:</label>
+							<textarea id="direccion" name="direccion" required></textarea>
+						</div>
+
+						<div class="form-group">
+							<label for="productos_bebida">Bebida:</label>
+							<select id="productos_bebida" name="productos_bebida" required>
+								<option value="">Seleccione una bebida...</option>
+								<option value="Tatox Coffee">Tatox Coffee</option>
+								<option value="Amay Coffee">Amay Coffee</option>
+								<option value="Icecoffee 444">Icecoffee 444</option>
+								<option value="May Mint">May Mint</option>
+								<option value="Espresso">Espresso 1111</option>
+								<option value="SwifTea">SwifTea</option>
+								<option value="Art">Art</option>
+								<option value="Anti-Hero">Anti-Hero</option>
+								<option value="Getaway Car">Getaway Car</option>
+								<option value="Archer">Archer</option>
+							</select>
+						</div>
+
+						<div class="form-group">
+							<label for="productos_comida">Comida:</label>
+							<select id="productos_comida" name="productos_comida" required>
+								<option value="">Seleccione una comida o snack...</option>
+								<option value="Sadwich 222">Sadwich 222</option>
+								<option value="Box Box cookies">Box Box cookies</option>
+								<option value="Maroon cake">Maroon Cake</option>
+								<option value="CinnamonGeorge">CinnamonGeorge</option>
+								<option value="Mastermind Bowl">Mastermind Bowl</option>
+								<option value="Love on Yogurth">Love on Yogurthr</option>
+								<option value="Lavender Haze Cupcake">Lavender Haze Cupcake</option>
+								<option value="Ameri Brownies">Ameri Brownies</option>
+							</select>
+						</div>
+
+						<div class="form-group">
+							<label for="productos_extra">Productos extra:</label>
+							<input type="text" id="productos_extra" name="productos_extra">
+						</div>
+
+						<div class="form-group">
+							<label for="cantidad">Cantidad:</label>
+							<input type="number" id="cantidad" name="cantidad" required>
+						</div>
+
+						<center><button type="submit">Enviar</button></center>
+					</form>
+				</div>
+			</div>
+		</main>
+
+		<footer class="footer">
+			<div class="container container-footer">
+				<div class="menu-footer">
+					<div class="contact-info">
+						<p class="title-footer">Información de Contacto</p>
+						<ul>
+							<li>Dirección: 71 Pennington Lane Vernon Rockville, CT 06066</li>
+							<li>Teléfono: 444-444-4444</li>
+							<li>Fax: 010809</li>
+							<li>Email: maymaycoff@gmail.com</li>
+						</ul>
+						<div class="social-icons">
+							<span class="facebook"><i class="fa-brands fa-facebook-f"></i></span>
+							<span class="twitter"><i class="fa-brands fa-twitter"></i></span>
+							<span class="instagram"><i class="fa-brands fa-instagram"></i></span>
+						</div>
+					</div>
+
+					<div class="information">
+						<p class="title-footer">Información</p>
+						<ul>
+							<li><a href="info.html">Acerca de Nosotros</a></li>
+							<li><a href="pedidos.html">Información Delivery</a></li>
+							<li><a href="#">Políticas de Privacidad</a></li>
+							<li><a href="#">Términos y condiciones</a></li>
+						</ul>
+					</div>
+
+					<div class="my-account">
+						<p class="title-footer">Mi cuenta</p>
+						<ul>
+							<li><a href="#">Mi cuenta</a></li>
+							<li><a href="#">Historial de órdenes</a></li>
+							<li><a href="#">Lista de deseos</a></li>
+							<li><a href="#">Boletín</a></li>
+							<li><a href="#">Reembolsos</a></li>
+						</ul>
+					</div>
+
+					<div class="newsletter">
+						<p class="title-footer">Boletín informativo</p>
+						<div class="content">
+							<p>Suscríbete a nuestro blog y mantente al día con nuevos productos y ofertas exclusivas.</p>
+							<input type="email" placeholder="Ingresa el correo aquí...">
+							<button>Suscríbete</button>
+						</div>
+					</div>
+				</div>
+
+				<div class="copyright">
+					<center><p>MayMay Coffee Todos los derechos reservados. &copy; 2024</p></center>
+					<img src="payment.png" alt="Pagos">
+				</div>
+			</div>
+		</footer>
+
+		<script>
+			// Manejo de envío para el formulario de pedido
+			document.getElementById("pedidoFormulario").addEventListener("submit", function(event) {
+				event.preventDefault();
+				const formData = new FormData(this);
+		
+				fetch("procesar_pedido.php", {
+					method: "POST",
+					body: formData
+				})
+				.then(response => response.text())
+				.then(data => {
+					console.log("Pedido exitoso:", data);
+					window.location.href = "pedidos.html"; // Redirigir tras el pedido
+				})
+				.catch(error => console.error("Error al registrar el pedido:", error));
+			});
+		</script>
+
+		<script src="https://kit.fontawesome.com/81581fb069.js" crossorigin="anonymous"></script>
+	</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrito de Compras</title>
+    <link rel="stylesheet" href="car.css" />
+</head>
+<body>
+ 
+    
+    <h1>Carrito de Compras</h1>
+    <ul id="lista-carrito"></ul>
+    <p id="total">Total: $0</p>
+    <button onclick="vaciarCarrito()">Vaciar Carrito</button>
+    <button><a href="menu.html"> inicio</a></button>
+
+    <script>
+        function cargarCarrito() {
+            const productosCarrito = JSON.parse(localStorage.getItem('carrito')) || [];
+            const total = localStorage.getItem('total') || 0;
+
+            const listaCarrito = document.getElementById('lista-carrito');
+            productosCarrito.forEach(producto => {
+                const item = document.createElement('li');
+                item.textContent = `${producto.nombre} - $${producto.precio}`;
+                listaCarrito.appendChild(item);
+            });
+
+            document.getElementById('total').textContent = `Total: $${total}`;
+        }
+
+        function vaciarCarrito() {
+            localStorage.removeItem('carrito');
+            localStorage.removeItem('total');
+            window.location.reload(); // Recargar la página
+        }
+
+        // Cargar el carrito al abrir la página
+        window.onload = cargarCarrito;
+    </script>
+    
+</body>
+</html>
